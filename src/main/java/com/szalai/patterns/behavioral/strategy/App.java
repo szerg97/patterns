@@ -2,15 +2,24 @@ package com.szalai.patterns.behavioral.strategy;
 
 public class App {
     public static void main(String[] args) {
-        Navigator navigator = Navigator.getInstance();
+        Duck duck = new Duck();
 
-        navigator.setStrategy(new WalkingStrategy());
-        navigator.buildRoute("A", "B");
+        duck.setFlyBehavior(new FlyNoWay());
+        duck.setQuackBehavior(new QuackLoud());
 
-        navigator.setStrategy(new PublicTransportStrategy());
-        navigator.buildRoute("A", "B");
+        duck.performFly();
+        duck.performQuack();
 
-        navigator.setStrategy(new RoadStrategy());
-        navigator.buildRoute("A", "B");
+        duck.setFlyBehavior(new FlyWithWings());
+        duck.setQuackBehavior(new QuackLoud());
+
+        duck.performFly();
+        duck.performQuack();
+
+        duck.setFlyBehavior(new FlyWithWings());
+        duck.setQuackBehavior(new QuackMuted());
+
+        duck.performFly();
+        duck.performQuack();
     }
 }
