@@ -10,6 +10,7 @@ public class Pen implements Item {
         this.color = color;
     }
 
+    @Override
     public String getBrand() {
         return brand;
     }

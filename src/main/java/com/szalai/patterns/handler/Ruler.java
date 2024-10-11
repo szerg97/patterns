@@ -10,6 +10,7 @@ public class Ruler implements Item {
         this.size = size;
     }
 
+    @Override
     public String getBrand() {
         return brand;
     }
